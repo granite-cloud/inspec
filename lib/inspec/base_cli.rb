@@ -157,6 +157,8 @@ module Inspec
         desc: "Exit with code 101 if any tests fail, and 100 if any are skipped (default).  If disabled, exit 0 on skips and 1 for failures."
       option :diff, type: :boolean, default: true,
         desc: "Use --no-diff to suppress 'diff' output of failed textual test results."
+      option :sort_results_by, type: :string, default: "none", banner: "--sort-results-by=none|control|file|random",
+        desc: "After normal execution order, results are sorted by control ID, or by file, or randomly. None uses legacy unsorted mode."
     end
 
     def self.format_platform_info(params: {}, indent: 0, color: 39)
